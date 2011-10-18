@@ -2,40 +2,30 @@ safe:        false
 auto:        false
 server:      false
 server_port: 4000
-baseurl:    /index.html
 
 source:      .
 destination: ./_site
 plugins:     ./_plugins
 
 future:      true
-lsi:         false
+lsi:         true
 pygments:    false
-markdown:    maruku
-permalink:   date
+markdown:    engine
+permalink:   /:categories/:title
+paginate:    20
+#limit_posts: 20
 
-maruku:
-  use_tex:    false
-  use_divs:   false
-  png_engine: blahtex
-  png_dir:    images/latex
-  png_url:    /images/latex
+title:         Your Site's Title Here
+description:   You Site's Description Here
+base:          http://www.domain.com
+author:        Your Name Here
+email:         me@domain.com
 
-rdiscount:
-  extensions: []
+disqus_id:     disqus
+google_analytics:  UA-XXXXXX-1
+redirects:   true
 
-kramdown:
-  auto_ids: true,
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  use_coderay: false
-  
-  coderay:
-    coderay_wrap: div
-    coderay_line_numbers: inline
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: style
+exclude:    
+- ./tasks
+- README.textile
 
